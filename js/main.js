@@ -130,4 +130,48 @@
 		}
 	});
 
+  // Photo preview functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const photos = document.querySelectorAll('.travel-photo');
+    const overlay = document.querySelector('.photo-overlay');
+    
+    // Create close button
+    const closeButton = document.createElement('div');
+    closeButton.className = 'preview-close';
+    closeButton.innerHTML = '×';
+    document.body.appendChild(closeButton);
+    closeButton.style.display = 'none';
+
+    photos.forEach(photo => {
+      photo.addEventListener('click', function() {
+        const preview = this.querySelector('.photo-preview');
+        preview.classList.add('active');
+        overlay.classList.add('active');
+        closeButton.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      });
+    });
+
+    // Close preview on overlay or close button click
+    function closePreview() {
+      const activePreview = document.querySelector('.photo-preview.active');
+      if (activePreview) {
+        activePreview.classList.remove('active');
+        overlay.classList.remove('active');
+        closeButton.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+    }
+
+    overlay.addEventListener('click', closePreview);
+    closeButton.addEventListener('click', closePreview);
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closePreview();
+      }
+    });
+  });
+
 })(jQuery);

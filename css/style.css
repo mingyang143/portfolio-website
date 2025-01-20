@@ -1477,9 +1477,9 @@ footer .credits a {
 /* Travel Photos Gallery */
 .photos-wrapper {
   padding: 20px;
-  max-width: 1400px;
+  max-width: 1800px; /* Increased to accommodate 4 columns */
   margin: 0 auto;
-  position: relative; /* For positioning the preview */
+  position: relative;
 }
 
 .photos-container {
@@ -1489,12 +1489,31 @@ footer .credits a {
   position: relative;
 }
 
+/* Responsive grid adjustments */
+@media (min-width: 1200px) {
+  .photos-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .photos-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .photos-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+  }
+}
+
 .travel-photo {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   aspect-ratio: 4/3;
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 .travel-photo img {
@@ -1504,25 +1523,25 @@ footer .credits a {
   transition: transform 0.3s ease;
 }
 
-/* Full-size preview styling */
-.travel-photo:hover .photo-preview {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(-50%, -50%) scale(1);
+/* Hover effect without preview */
+.travel-photo:hover img {
+  transform: scale(1.05);
 }
 
+/* Full-size preview styling */
 .photo-preview {
+  display: none; /* Hidden by default */
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -50%);
   z-index: 1000;
   max-width: 90vw;
   max-height: 90vh;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.photo-preview.active {
+  display: block;
 }
 
 .photo-preview img {
@@ -1534,44 +1553,39 @@ footer .credits a {
 
 /* Overlay background */
 .photo-overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.9);
   z-index: 999;
 }
 
-.travel-photo:hover + .photo-overlay,
-.photo-overlay:hover {
-  opacity: 1;
-  visibility: visible;
+.photo-overlay.active {
+  display: block;
 }
 
-/* Keep the preview visible when hovering over it */
-.photo-preview:hover {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Original caption styling */
-.photo-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.7);
+/* Close button for preview */
+.preview-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
   color: white;
-  font-size: 0.9rem;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  transition: background 0.3s ease;
 }
 
-.travel-photo:hover .photo-caption {
-  transform: translateY(0);
+.preview-close:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
