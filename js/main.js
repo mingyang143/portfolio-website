@@ -101,6 +101,22 @@
 		});
 	}
 
+  // Know More Button Handler
+  $('#know-more-btn').on('click', function() {
+    const $button = $(this);
+    const $content = $('#additional-content');
+    
+    if ($content.is(':hidden')) {
+      $content.slideDown('slow');
+      $button.addClass('active');
+      $button.html('<span>show less</span><i class="fa fa-chevron-down"></i>');
+    } else {
+      $content.slideUp('slow');
+      $button.removeClass('active');
+      $button.html('<span>read more</span><i class="fa fa-chevron-down"></i>');
+    }
+  });
+
 	/*--/ Testimonials owl /--*/
 	$('#testimonial-mf').owlCarousel({
 		margin: 20,

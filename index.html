@@ -59,6 +59,37 @@
     .card-blog p {
       position: relative; left: 5px;
     }
+
+    .btn-subtle {
+      background: none;
+      border: none;
+      color: #0078ff;
+      font-size: 0.85em;
+      text-transform: lowercase;
+      letter-spacing: 1px;
+      padding: 10px 0;
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+
+    .btn-subtle:hover {
+      opacity: 1;
+      transform: translateX(5px);
+    }
+
+    .btn-subtle i {
+      font-size: 0.7em;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-subtle.active i {
+      transform: rotate(180deg);
+    }
   </style>
 
   <!-- =======================================================
@@ -95,7 +126,7 @@
             <a class="nav-link js-scroll" href="#company">Organisations</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="#blog">Travelling</a>
+            <a class="nav-link js-scroll" href="#blog">Hobbies</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#contact">Contact Me</a>
@@ -113,8 +144,8 @@
       <div class="table-cell">
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4">You Zeyuan Jerry</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Full Stack Developer, AI Enthusiast, Entrepreneur, Avid Backpacker</span><strong class="text-slider"></strong></p>
+          <h1 class="intro-title mb-4">Hi, I am  Jerry</h1>
+          <p class="intro-subtitle"><span class="text-slider-items">Software Engineer, AI Enthusiast, Avid Backpacker</span><strong class="text-slider"></strong></p>
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
@@ -129,58 +160,59 @@
           <div class="box-shadow-full">
             <div class="row">
               <div class="col-md-12">
-                <div class="row">
-                  <div class="col-sm-4 col-md-4">
-                    <div class="about-img" style="position: relative; right: 12px">
-                      <img src="img/JerryDP.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                    </div>
-                  </div>
-                <div class="about-me pt-4 pt-md-0">
-                  <div class="title-box-2">
-                    <h5 class="title-left">
-                      About me
-                    </h5>
-                  </div>
-                  <p class="lead">
-                    Hello, my name is Jerry, thanks for visiting my website! I thrive on the freedom to explore, whether it's through technology, entrepreneurship, or traveling. Each of these pursuits gives me a way to grow and find my sense of purpose.
-                  </p>
-                  <h5>
-                    Innovator
-                  </h5>
+                <!-- Skills Section -->
+                <div class="title-box-2">
+                  <h5 class="title-left">My Skills</h5>
+                </div>
+                <div class="skill-mf">
+                  <!-- Languages -->
+                  <div class="skill" data-category="language">Java</div>
+                  <div class="skill" data-category="language">JavaScript</div>
+                  <div class="skill" data-category="language">Python</div>
+                  <div class="skill" data-category="language">TypeScript</div>
+                  <div class="skill" data-category="language">HTML</div>
+                  <div class="skill" data-category="language">CSS</div>
+                  
+                  <!-- Frameworks -->
+                  <div class="skill" data-category="framework">React</div>
+                  <div class="skill" data-category="framework">React Native</div>
+                  <div class="skill" data-category="framework">Node.js</div>
+                  <div class="skill" data-category="framework">Media Pipe</div>
+                  
+                  <!-- Tools -->
+                  <div class="skill" data-category="tool">Git</div>
+                  <div class="skill" data-category="tool">AWS</div>
+                  <div class="skill" data-category="tool">PostgreSQL</div>
+                  <div class="skill" data-category="tool">Supabase</div>
+                  <div class="skill" data-category="tool">Firebase</div>
+                  <div class="skill" data-category="tool">Shopify</div>
+                  <div class="skill" data-category="tool">Gemini API</div>
+                </div>
+
+                <!-- About Text -->
+                <p class="lead">
+                  Hello, my name is Jerry, thanks for visiting my website! I am an aspiring software engineer currently studying at NUS. I thrive on the freedom to explore, whether it's through technology, entrepreneurship, or traveling. Each of these pursuits gives me a way to grow and find my sense of purpose.
+                </p>
+                
+                <div id="additional-content" style="display: none;">
+                  <h5>Innovator</h5>
                   <p class="lead">
                     My passion for software engineering lies in its limitless potential to turn imagination into functional realities. I take pride in building solutions that not only work but also inspire. Over time, I've developed a keen interest in algorithms and program efficiency. Beyond admiring the elegance of well-crafted algorithms, I love tackling challenges with creative approaches to optimize performance and elevate functionality.
                   </p> 
-                  <h5>
-                    Entrepreneur
-                  </h5>
+                  <h5>Entrepreneur</h5>
                   <p class="lead">
                     Entrepreneurship, to me, is much like coding. Both involve starting from scratch, shaping ideas with innovation, and delivering value to the world. My technological background equips me to build solutions, while my entrepreneurial spirit drives me to create ventures with meaningful impact. The intersection of technology and business is where I find my purpose—using technical skills to address real-world problems and spark positive change.
                   </p>
-                  <h5>
-                    Explorer
-                  </h5>
+                  <h5>Explorer</h5>
                   <p class="lead">
-                    Traveling fuels my curiosity and sense of wonder. I immerse myself in new cultures through their language, food, and traditions, finding inspiration in the stories and experiences of others. For me, exploration is more than a journey—it's a way to find purpose and connection in a diverse and dynamic world.                  </p>
+                    Traveling fuels my curiosity and sense of wonder. I immerse myself in new cultures through their language, food, and traditions, finding inspiration in the stories and experiences of others. For me, exploration is more than a journey—it's a way to find purpose and connection in a diverse and dynamic world.
+                  </p>
                 </div>
-              </div>
-              <br>
-              <br>
-              <div class="col-md-12">
-                </div>
-                <div class="skill-mf">
-                  <p class="title-s">Technical Skills</p>
-                  <p>App Dev: HTML, CSS, Node.js, React.js</p> 
-                  <p>Other tools: Java, Python, Firebase, Gradle, Git/GitHub</p> 
-                  <p>Productivity: Microsoft Excel, PowerPoint, Notion</p> 
-                  
-                </div>
-                <div class="skill-mf">
-                  <p class="title-s">Hobbies</p>
-                  <p>Badminton and Basketball- Represents college in competitons</p> 
-                  <p>Travelling and Backpacking!</p> 
-                  <p>Languages: English, Chinese, Thai</p> 
-                  
-                </div>
+                
+                <button id="know-more-btn" class="btn-subtle">
+                  <span>read more</span>
+                  <i class="fa fa-chevron-down"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -205,81 +237,122 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/AlpacaLogo.png" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="img/AlpacaLogo.png" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Automated Trading Bot</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Algorithmic Trading</span> / <span class="w-date">Apr 2023</span>
-                    </div>
+      <div class="work-container">
+        <div class="work-box">
+          <a href="img/Eduvault-UI.png" data-lightbox="gallery-mf">
+            <div class="work-img">
+              <img src="img/Eduvault-UI.png" alt="" class="img-fluid">
+            </div>
+            <div class="work-content">
+              <div class="row">
+                <div class="col-sm-8">
+                  <h2 class="w-title">EduVault Education Management System</h2>
+                  <div class="w-more">
+                    <p> EduVault is a comprehensive education management system that allows admins to manage their students and classes, currently expanding to allow tutors and students to chat with each other and arrange lesson timings through an integrated web app</p>
+                    <span class="w-ctegory">Desktop Application</span> / <span class="w-ctegory">Java</span> / <span class="w-ctegory">JavaFX</span>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="w-like">
+                    <span class="ion-ios-plus-outline"></span>
                   </div>
                 </div>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/Eduvault-UI.png" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="img/Eduvault-UI.png" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">EduVault Education Management System</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Application</span> / <span class="w-date">18 Sep. 2018</span>
-                    </div>
+        <div class="work-box">
+          <a href="img/TempioLogo.png" data-lightbox="gallery-mf">
+            <div class="work-img">
+              <img src="img/TempioLogo.png" alt="" class="img-fluid">
+            </div>
+            <div class="work-content">
+              <div class="row">
+                <div class="col-sm-8">
+                  <h2 class="w-title">Tempio Physiotherapist Management System</h2>
+                  <div class="w-more">
+                    <p> Tempio is a physiotherapist management system that allows physiotherpist to manage their clients, with integrated computer vision to track client's exercise form</p>
+                    <span class="w-ctegory">Application</span> / <span class="w-ctegory">React</span> / <span class="w-ctegory">Node.js</span> / <span class="w-ctegory">PostgreSQL</span> / <span class="w-ctegory">Media Pipe</span>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="w-like">
+                    <span class="ion-ios-plus-outline"></span>
                   </div>
                 </div>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/TempioLogo.png" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="img/TempioLogo.png" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Tempio Physiotherapist Management System</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Application</span> / <span class="w-date">18 Sep. 2018</span>
-                    </div>
+        <div class="work-box">
+          <a href="img/SummAIze_login.jpg" data-lightbox="gallery-mf">
+            <div class="work-img">
+              <img src="img/SummAIze_login.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="work-content">
+              <div class="row">
+                <div class="col-sm-8">
+                  <h2 class="w-title">SummAIze</h2>
+                  <div class="w-more">
+                    <p>SummAIze is the a dashboard build for the overworked, integrating Google Gemini and Nylas API to summarize emails and create TODO lists</p>
+                    <span class="w-ctegory">Web application</span> / <span class="w-ctegory">React</span> / <span class="w-ctegory">Node.js</span> / <span class="w-ctegory">Gemini API</span> / <span class="w-ctegory">Supabase</span> / <span class="w-ctegory">Nylas API</span>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="w-like">
+                    <span class="ion-ios-plus-outline"></span>
                   </div>
                 </div>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
-        
-        
+        <div class="work-box">
+          <a href="img/Eduvault-UI.png" data-lightbox="gallery-mf">
+            <div class="work-img">
+              <img src="img/Eduvault-UI.png" alt="" class="img-fluid">
+            </div>
+            <div class="work-content">
+              <div class="row">
+                <div class="col-sm-8">
+                  <h2 class="w-title">Bean&Leaf</h2>
+                  <div class="w-more">
+                    <p>Bean&Leaf is a mobile application built for the coffee and tea enthusiasts. It allows users to track their favorite coffee spots and share with their friends</p>
+                    <span class="w-ctegory">Mobile Application</span> / <span class="w-ctegory">React Native</span> / <span class="w-ctegory">Supabase</span> / <span class="w-ctegory">React Native Maps</span>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="w-like">
+                    <span class="ion-ios-plus-outline"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="work-box">
+          <a href="img/AlpacaLogo.png" data-lightbox="gallery-mf">
+            <div class="work-img">
+              <img src="img/AlpacaLogo.png" alt="" class="img-fluid">
+            </div>
+            <div class="work-content">
+              <div class="row">
+                <div class="col-sm-8">
+                  <h2 class="w-title">Automated Trading Bot</h2>
+                  <div class="w-more">
+                    <p>Built a trading bot to predict stock prices using moving averages and trade a paper account automatically</p>
+                    <span class="w-ctegory">Algorithmic Trading</span> / <span class="w-ctegory">Alpaca API</span> / <span class="w-ctegory">Python</span> / <span class="w-ctegory">Numpy</span>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="w-like">
+                    <span class="ion-ios-plus-outline"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -313,7 +386,7 @@
                   <div class="col-sm-8">
                     <h2 class="w-title">Konvy International</h2>
                     <div class="w-more">
-                      <p>Scope: Data Automation and Analysis using Excel, Python and PowerBI</p> <span class="w-date">May 2024 - Aug 2024</span>
+                      <p>Data Automation and Analysis using Excel, Python and PowerBI</p> <span class="w-date">May 2024 - Aug 2024</span>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -337,7 +410,7 @@
                   <div class="col-sm-8">
                     <h2 class="w-title">Online Enrichment Center</h2>
                     <div class="w-more">
-                      <p>Scope: Matching secondary and junior college students with tutors from NUS</p></span>  <span class="w-date">Feb 2023 - Present</span>
+                      <p>Match secondary and junior college students with tutors from NUS</p></span>  <span class="w-date">Feb 2023 - Present</span>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -361,7 +434,7 @@
                   <div class="col-sm-8">
                     <h2 class="w-title">Student:Compassion Singapore</h2>
                     <div class="w-more">
-                      <p>Scope: Channeling corporate funds to student-led projets in Singapore</p> <span class="w-date">Jun 2019 - May 2021</span>
+                      <p>Channel corporate funds to student-led projets in Singapore</p> <span class="w-date">Jun 2019 - May 2021</span>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -389,10 +462,10 @@
         <div class="col-sm-12">
           <div class="title-box text-center">
             <h3 class="title-a">
-              Travelling
+              Hobbies
             </h3>
             <p class="subtitle-a">
-              Putting my favorite travel photos here
+              Travel Photography
             </p>
             <div class="line-mf"></div>
           </div>
@@ -401,50 +474,50 @@
     </div>
     <div class="photos-wrapper">
       <div class="photos-container">
-        <div class="card card-blog">
-          <div class="card-img">
-            <a href="blog-single.html">
-              <img src="img/Mt Fuji.JPG" alt="" class="img-fluid">
-            </a>
+        <div class="travel-photo">
+          <img src="img/Mt Fuji.JPG" alt="Mt Fuji" class="img-fluid">
+          <div class="photo-caption">Mt Fuji, Japan</div>
+          <div class="photo-preview">
+            <img src="img/Mt Fuji.JPG" alt="Mt Fuji">
           </div>
-          <p style="font-size: 10px;">Mt Fuji, Japan</p>
         </div>
-      
-        <div class="card card-blog">
-          <div class="card-img">
-            <a href="blog-single.html">
-              <img src="img/Tokyo Traffic .JPG" alt="" class="img-fluid">
-            </a>
+        <div class="photo-overlay"></div>
+        
+        <div class="travel-photo">
+          <img src="img/Tokyo Traffic .JPG" alt="Tokyo Traffic" class="img-fluid">
+          <div class="photo-caption">Tokyo, Japan</div>
+          <div class="photo-preview">
+            <img src="img/Tokyo Traffic .JPG" alt="Tokyo Traffic">
           </div>
-          <p style="font-size: 10px;">Tokyo, Japan</p>
         </div>
-      
-        <div class="card card-blog">
-          <div class="card-img">
-            <a href="blog-single.html">
-              <img src="img/BaliSunset.jpg" alt="" class="img-fluid">
-            </a>
+        <div class="photo-overlay"></div>
+        
+        <div class="travel-photo">
+          <img src="img/BaliSunset.jpg" alt="Bali Sunset" class="img-fluid">
+          <div class="photo-caption">Bali, Indonesia</div>
+          <div class="photo-preview">
+            <img src="img/BaliSunset.jpg" alt="Bali Sunset">
           </div>
-          <p style="font-size: 10px;">Bali, Indonesia</p>
         </div>
-      
-        <div class="card card-blog">
-          <div class="card-img">
-            <a href="blog-single.html">
-              <img src="img/Foggy Train Ride.JPG" alt="" class="img-fluid">
-            </a>
+        <div class="photo-overlay"></div>
+        
+        <div class="travel-photo">
+          <img src="img/Foggy Train Ride.JPG" alt="Foggy Train Ride" class="img-fluid">
+          <div class="photo-caption">Yilan, Taiwan</div>
+          <div class="photo-preview">
+            <img src="img/Foggy Train Ride.JPG" alt="Foggy Train Ride">
           </div>
-          <p style="font-size: 10px;">Yilan, Taiwan</p>
         </div>
-      
-        <div class="card card-blog">
-          <div class="card-img">
-            <a href="blog-single.html">
-              <img src="img/Greece.JPG" alt="" class="img-fluid">
-            </a>
+        <div class="photo-overlay"></div>
+        
+        <div class="travel-photo">
+          <img src="img/Greece.JPG" alt="Greece" class="img-fluid">
+          <div class="photo-caption">Santorini, Greece</div>
+          <div class="photo-preview">
+            <img src="img/Greece.JPG" alt="Greece">
           </div>
-          <p style="font-size: 10px;">Santorini, Greece</p>
         </div>
+        <div class="photo-overlay"></div>
       </div>
     </div>
     
@@ -535,6 +608,12 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+  <script>
+    document.getElementById('know-more-btn').addEventListener('click', function() {
+      document.getElementById('additional-content').style.display = 'block';
+    });
+  </script>
 
 </body>
 </html>
