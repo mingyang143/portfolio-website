@@ -210,18 +210,23 @@
   });
 
   $(document).ready(function() {
+    console.log('Setting up project link handlers');
+    
     $('.work-box a').each(function() {
+      console.log('Found link:', this.href);
       $(this).off('click'); // Remove any existing click handlers
       
       if (this.id === 'openModal') {
-        // Modal handler is already set up elsewhere
+        console.log('Found modal trigger');
         return;
       }
       
       $(this).on('click', function(e) {
+        console.log('Link clicked:', this.href);
         e.preventDefault();
         e.stopPropagation(); // Stop event bubbling
         const href = $(this).attr('href');
+        console.log('Opening URL:', href);
         if (href && href !== '#') {
           window.open(href, '_blank');
         }
