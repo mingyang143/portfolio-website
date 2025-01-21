@@ -239,7 +239,7 @@
       </div>
       <div class="work-container">
         <div class="work-box">
-          <a href="https://github.com/Slipperybara/EduVault" >
+          <a href="https://github.com/Slipperybara/ChatPlatform" >
             <div class="work-img">
               <img src="img/Eduvault-UI.png" alt="" class="img-fluid">
             </div>
@@ -262,7 +262,7 @@
           </a>
         </div>
         <div class="work-box">
-          <a href="img/TempioLogo.png" data-lightbox="gallery-mf">
+          <a href="#" id="openModal">
             <div class="work-img">
               <img src="img/TempioLogo.png" alt="" class="img-fluid">
             </div>
@@ -614,6 +614,15 @@
       document.getElementById('additional-content').style.display = 'block';
     });
   </script>
+
+  <!-- Add this right before the closing </body> tag -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <h2>Tempio Project</h2>
+      <p>This project is currently under development. Please check back later!</p>
+      <button class="close-btn" id="closeModal">Close</button>
+    </div>
+  </div>
 
 </body>
 </html>

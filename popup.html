@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop-Up Screen</title>
+  <style>
+    /* Basic styles for the page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* The modal's background overlay */
+    .modal-overlay {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      z-index: 1000; /* Above other elements */
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* The modal content box */
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Close button */
+    .close-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- The modal structure -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <h2>Welcome to the Pop-Up!</h2>
+      <p>This is a simple modal screen triggered by an anchor tag.</p>
+      <button class="close-btn" id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript for handling the pop-up
+    const openModal = document.getElementById('openModal');
+    const closeModal = document.getElementById('closeModal');
+    const modal = document.getElementById('modal');
+
+    // Show the modal
+    openModal.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent the default anchor behavior
+      modal.style.display = 'flex'; // Show the modal
+    });
+
+    // Close the modal
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none'; // Hide the modal
+    });
+  </script>
+
+</body>
+</html>

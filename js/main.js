@@ -174,4 +174,39 @@
     });
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const openModalBtn = document.getElementById('openModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modal = document.getElementById('modal');
+
+    if (openModalBtn && closeModalBtn && modal) {
+      openModalBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      });
+
+      closeModalBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+      });
+
+      // Close modal when clicking outside
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close modal on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+    }
+  });
+
 })(jQuery);
