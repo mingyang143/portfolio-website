@@ -209,16 +209,24 @@
     }
   });
 
-  document.querySelectorAll('.work-box a').forEach(link => {
-    if (link.id !== 'openModal') {  // Skip the modal trigger
-      link.addEventListener('click', function(e) {
+  $(document).ready(function() {
+    $('.work-box a').each(function() {
+      $(this).off('click'); // Remove any existing click handlers
+      
+      if (this.id === 'openModal') {
+        // Modal handler is already set up elsewhere
+        return;
+      }
+      
+      $(this).on('click', function(e) {
         e.preventDefault();
-        const href = this.getAttribute('href');
+        e.stopPropagation(); // Stop event bubbling
+        const href = $(this).attr('href');
         if (href && href !== '#') {
           window.open(href, '_blank');
         }
       });
-    }
+    });
   });
 
 })(jQuery);

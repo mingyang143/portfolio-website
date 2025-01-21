@@ -1642,12 +1642,23 @@ footer .credits a {
   color: inherit;
   display: block;
   height: 100%;
+  cursor: pointer;
 }
 
-.work-box a:not(#openModal) {
-  cursor: pointer;
+.work-box a[href^="http"],
+.work-box a[href^="https"] {
+  cursor: pointer !important;
 }
 
 #openModal {
-  cursor: pointer;
+  cursor: pointer !important;
+}
+
+/* Remove any lightbox-related styles */
+.work-box .work-img {
+  pointer-events: auto !important;
+}
+
+.work-box .work-content {
+  pointer-events: auto !important;
 }
