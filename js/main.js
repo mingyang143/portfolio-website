@@ -209,26 +209,30 @@
     }
   });
 
-  $(document).ready(function() {
-    console.log('Setting up project link handlers');
+  $(window).on('load', function() {
+    console.log('Window loaded - Setting up project link handlers');
     
+    // First remove any existing click handlers
+    $('.work-box a').off('click');
+    
+    // Then add new click handlers
     $('.work-box a').each(function() {
-      console.log('Found link:', this.href);
-      $(this).off('click'); // Remove any existing click handlers
+      const $link = $(this);
+      const href = $link.attr('href');
+      console.log('Setting up handler for:', href);
       
-      if (this.id === 'openModal') {
-        console.log('Found modal trigger');
+      if ($link.attr('id') === 'openModal') {
+        console.log('Skipping modal trigger');
         return;
       }
       
-      $(this).on('click', function(e) {
-        console.log('Link clicked:', this.href);
+      $link.on('click', function(e) {
         e.preventDefault();
-        e.stopPropagation(); // Stop event bubbling
-        const href = $(this).attr('href');
-        console.log('Opening URL:', href);
+        e.stopPropagation();
+        console.log('Clicked link:', href);
+        
         if (href && href !== '#') {
-          window.open(href, '_blank');
+          window.location.href = href;
         }
       });
     });
