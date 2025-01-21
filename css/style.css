@@ -1636,3 +1636,18 @@ footer .credits a {
   background-color: #0056b3;
   transform: translateY(-2px);
 }
+
+.work-box a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.work-box a:not(#openModal) {
+  cursor: pointer;
+}
+
+#openModal {
+  cursor: pointer;
+}

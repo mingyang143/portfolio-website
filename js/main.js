@@ -209,4 +209,16 @@
     }
   });
 
+  document.querySelectorAll('.work-box a').forEach(link => {
+    if (link.id !== 'openModal') {  // Skip the modal trigger
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+          window.open(href, '_blank');
+        }
+      });
+    }
+  });
+
 })(jQuery);
