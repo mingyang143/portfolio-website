@@ -209,33 +209,4 @@
     }
   });
 
-  $(window).on('load', function() {
-    console.log('Window loaded - Setting up project link handlers');
-    
-    // First remove any existing click handlers
-    $('.work-box a').off('click');
-    
-    // Then add new click handlers
-    $('.work-box a').each(function() {
-      const $link = $(this);
-      const href = $link.attr('href');
-      console.log('Setting up handler for:', href);
-      
-      if ($link.attr('id') === 'openModal') {
-        console.log('Skipping modal trigger');
-        return;
-      }
-      
-      $link.on('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log('Clicked link:', href);
-        
-        if (href && href !== '#') {
-          window.location.href = href;
-        }
-      });
-    });
-  });
-
 })(jQuery);

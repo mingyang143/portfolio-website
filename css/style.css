@@ -765,6 +765,7 @@ a:hover {
   position: relative;
   height: 100%;
   z-index: 1;
+  cursor: pointer;
 }
 
 .work-box::after {
@@ -1672,15 +1673,37 @@ footer .credits a {
 .work-box a.project-link {
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
+  cursor: pointer !important;
   position: relative;
   z-index: 2;
+  display: block;
 }
 
-.work-box .work-content {
+/* Remove pointer-events: none from these elements */
+.work-box .work-content,
+.work-box .work-img {
+  pointer-events: auto;
+}
+
+/* Ensure the entire card is clickable */
+.work-box a.project-link * {
   pointer-events: none;
 }
 
-.work-box .work-img {
+.work-box {
+  position: relative;
+  cursor: pointer;
+}
+
+.work-box a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.work-box .work-img,
+.work-box .work-content {
   pointer-events: none;
 }
